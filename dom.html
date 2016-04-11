@@ -4,9 +4,11 @@
 <head>
     <title>DOM</title>
     <meta charset="utf-8" />
+    <!--cursor style will make the pointer a hand pointer-->
     <style>
         #sayhello{
             background-color: red;
+            cursor: pointer; 
         }
     </style>
 </head>
@@ -14,6 +16,14 @@
 <body>
 
     <div id="sayhello">say hello</div>
+    
+    <script>
+        document.getElementById('sayhello').addEventListener('click', function() {
+            document.getElementById('sayhello').style.backgroundColor='green';
+            document.getElementById('sayhello').style.width='100px';
+            alert('hello');
+        } );
+    </script>
 
 </body>
 </html>
