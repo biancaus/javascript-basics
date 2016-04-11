@@ -55,11 +55,16 @@
     <a id="eyes_down_btn">move eyes down</a>
     
     <a id="eyes_closer">move eyes closer together</a>
-    <a>move eyes further apart</a>
-    <a>hollow eyes</a>
-    <a>solid eyes</a>
-    <a>big eyes</a>
-    <a>small eyes</a>
+    
+    <a id="eyes_apart">move eyes further apart</a>
+    
+    <a id="eyes_hollow">hollow eyes</a>
+    
+    <a id="eyes_solid">solid eyes</a>
+    
+    <a id="big_eyes">big eyes</a>
+    
+    <a id="small_eyes">small eyes</a>
     <a>no right eye</a>
     <a>happy mouth</a>
     <a>sad mouth</a>
@@ -70,6 +75,8 @@
     <img id="eye_left" src="eye_solid.svg" />
     <img id="eye_right" src="eye_solid.svg" />
     <img id="mouth" src="mouth_happy.svg" />
+
+
   </div>
   
   <script>
@@ -122,16 +129,27 @@
     );
 
     // move eyes further apart event listener
-      document.getElementById('eyes_closer').addEventListener('click', function() {
-        eye_left_x += 10;
+      document.getElementById('eyes_apart').addEventListener('click', function() {
+        eye_left_x -= 10;
         document.getElementById('eye_left').style.left = eye_left_x + 'px';
-        eye_right_x -= 10;
+        eye_right_x += 10;
         document.getElementById('eye_right').style.left = eye_right_x + 'px';
       }
     );
 
-
-
+    // hollow eyes event listener
+      document.getElementById('eyes_hollow').addEventListener('click', function() {
+        document.getElementById('eye_left').setAttribute('src', 'eye_hollow.svg');
+        document.getElementById('eye_right').setAttribute('src', 'eye_hollow.svg');
+      }
+    );
+      
+    // solid eyes event listener
+      document.getElementById('eyes_solid').addEventListener('click', function() {
+        document.getElementById('eye_left').setAttribute('src', 'eye_solid.svg');
+        document.getElementById('eye_right').setAttribute('src', 'eye_solid.svg');
+      }
+    );
   </script>
   
 </body>
